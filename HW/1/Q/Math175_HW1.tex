@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\Large \bf Homework 1}\\
+{\Large Due in Discussion Tuesday, January 23. \\
+}
+\end{center}
+
+\vspace{5mm}
+
+So far we have covered much of Chapter 1 of the LVP textbook.  In particular, we have discussed Sections 1.5, 1.6, 1.7, and 1.8.  We will not talk about the rest of the chapter in lecture, but you should read it on your own.  
+
+The first thing we will talk about next week is the counting with repetition covered in Section 3.4.  We will then talk about the birthday problem.  It will be helpful to read Section 2.5 for this, but I will take a slightly different approach.  After that, we will talk about Induction, which is covered in Section 2.1, and then move on to Sections 3.1-3.6.  We will come back to the rest of Chapter 2 later in the quarter.  
+
+It will also be very helpful to read Section 2.1 of the HHM textbook.  For a preview of what is coming up in the next few lectures, you should also read Section 2.2.
+
+
+
+
+\begin{enumerate}
+
+\item \textbf{Exercise 2.1.3 in HHM}: There are $30$ teams in the National Basketball Association: $15$ in the Western Conference, and $15$ in the Eastern Conference.
+\begin{enumerate}
+
+\item Suppose each of the teams in the league has one pick in the first round of the NBA draft.  How many ways are there to arrange the order of the teams selecting in the first round of the draft?
+
+\item Suppose that each of the first three positions in the draft must be awarded to one of the fourteen teams that did not advance to the playoffs that year.  How many ways are there to assign the first three positions in the draft?
+
+\item How many ways are there for eight teams from each conference to advance to the playoffs, if order is unimportant?
+ 
+\item Suppose that every teams has three centers, four guards, and five forwards.  How many ways are there to select an all-star team with the same composition from the Western Conference?
+
+\end{enumerate}
+
+\item How many submultisets of $\{1,1,2,2,\ldots, n, n\}$ have size that is divisible by $3$?  \\
+For example, when $n = 2$ we only want to count the submultisets of size $0$ and $3$.
+
+\item \textbf{Exercise 2.1.11 in HHM}: Suppose a positive integer $N$ factors as $N = p_1^{a_1}p_2^{a_2}\cdots p_m^{a_m}$, where $p_1,p_2,\ldots, p_m$ are distinct prime numbers and $a_1, a_2,\ldots, a_m$ are all positive integers.  How many different positive integers are divisors of $N$?
+
+\item There is an infinite line of houses with doors numbered $1,2,3,\ldots$ and so on.  All of the doors begin open.  A neighborhood resident comes by and closes every door.  Then another person comes by and opens every other door, that is, opens doors $2,4,6,\ldots$ and so on.  A third person comes by and changes the status of every third door, that is, if it's open she closes it, and if it's closed she opens it.  For example, since door 3 is now closed, she opens it.  Since door 6 is open, she closes it.  Then a fourth person comes by and does the analogous thing, then a fifth, and so on.  Give a simple description of the doors that will be closed in this process.
+
+\textbf{Hint:} It might be helpful to consider what happens for the first $10$ doors or so.  For example, once door $1$ is closed by the first person, it is never opened again, since the $n$th person in the process starts by going to door $n$.  The second door, is first closed by person one, and then opened by person two, and remains open after that.
+
+\textbf{Hint:} Use previous problem.
+
+\item \textbf{Exercise 2.1.12 in HHM}: Assume that a positive integer cannot have $0$ as its leading digit.
+\begin{enumerate}
+\item How many five-digit positive integers have no repeated digits at all?
+
+\item How many have no consecutive repeated digits?
+
+\item How many have at least one run of consecutive repeated digits (for example, $23324, 45551$, or $15155$, but not $12121$)?
+\end{enumerate}
+
+\item \textbf{Exercise 1.8.29 in LVP}: What is the number of ways to color $n$ objects with $3$ colors if every color must be used at least once?
+
+\textbf{Hint}: Consider the number of ways so that at least one color is not used.
+
+
+\item \textbf{Exercise 1.8.27 in LVP}:  Alice has $10$ balls (all different).  First, she splits them into two piles; then she picks one of the piles with at least two elements, and splits it into two; she repeats this until each pile only has one element.
+
+\begin{enumerate}
+\item How many steps does this take?
+\item Show that the number of different ways in which she can carry out this procedure is 
+\[ \binom{10}{2}\cdot \binom{9}{2} \cdots \binom{3}{2} \cdot \binom{2}{2}.\]
+
+\textbf{Hint}: Imagine this procedure backward.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+\end{document}

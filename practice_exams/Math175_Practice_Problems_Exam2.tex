@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{theo}{Theorem}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\large \bf Exam 2 Practice Problems}
+\end{center}
+
+Since Homework 5 was posted we continued our discussion of inclusion-exclusion.  We gave a proof similar to the one given for Theorem 2.6 of HHM (but our proof was more detailed).  
+
+We then started to discuss derangements and the $n$ students, $n$ lunchboxes problem.  Derangements are covered in pages 160-161 of HHM.  
+
+We spent some time discussing the set of all permutations of $\{1,2,\ldots, n\}$, which we denoted by $S_n$.  We saw a few ways of writing a permutation: two line notation, one line notation, and cycle notation. Section 2.7.1 of HHM is on `Permutation Groups' has a nice explanation of these concepts.  This section contains some additional material that we will not need in this course (for example, you do not need to know what a group is).
+
+On Monday we will finish up the proof of our formula for $D(n)$, the number of derangements of $\{1,2,\ldots, n\}$.  We will then discuss the number of permutations with a given cycle structure.  After that we will return to the problem of 100 prisoners who need to find their names in 100 boxes that we discussed in the first lecture.
+  
+
+\section{True/False}
+
+\begin{enumerate}
+
+\item At a party with $10$ guests there are at least two people who know the same number of other guests.
+
+{\bf Note}: If person A `knows' person B, then person B must also `know' person A.
+
+
+
+
+\item Let $C_k$ denote the $k$th Catalan number.  For $k \ge 1$,
+\[
+C_k = \frac{2^k}{(k+1)!} \prod_{i=1}^k (2i-1).
+\]
+
+\item A professor has been working for the same department for 30 years.  There are two semesters in a year.  She taught two courses in each semester.  The department offers 15 different courses.  There must have been two semesters when this professor taught exactly the same pair of courses.
+
+\end{enumerate}
+
+\section{Problems}
+
+
+\begin{enumerate}
+
+\item A $k$-digit number cannot have $0$ as its first digit (for example $09$ is not a two-digit number.)  A number is a palindrome if it is the same read forwards and backwards (for example $172271$ is a palindrome, but $2320$ is not.)  \\
+How many $2k+1$ digit numbers are not palindromes?
+ 
+\item How many arrangements of MISSISSIPPI do not have consecutive I's?
+
+
+\item Recall that a \emph{derangement} of $\{1,2,\ldots, n\}$ is a permutation with no fixed points.  Let $D(n)$ denote the number of derangements of $\{1,2,\ldots, n\}$.  By convention $D(0) = 1$.
+
+\begin{enumerate}
+
+\item Directly calculate $D(1), D(2)$, and $D(3)$.
+
+\item Give a combinatorial explanation for the following identity:
+\[
+n! = \sum_{k=0}^n \binom{n}{k} \cdot D(n-k),
+\]
+(that is, show that both sides above are counting the same thing.)
+
+\item Use the identity from the previous part to compute $D(4)$.
+
+\end{enumerate}
+
+
+\item Let $F(n)$ be the number of subsets of the set $\{1,2,\ldots, n\}$ that contain no three consecutive integers.  For example, $F(1) = 2,\ F(2) = 4$, and $F(3) = 7$.  
+
+Find a recurrence satisfied by $F(n)$.
+
+\item For a positive integer $n \ge 0$, show that
+\[
+\sum_{k=0}^n \frac{1}{k+1} \cdot \binom{n}{k} = \frac{2^{n+1}-1}{n+1}.
+\]
+
+{\bf Hint}: You may want to rewrite this equation somehow instead of trying to apply induction right away.
+
+\item Suppose $n \ge 2$.  We choose $n+2$ numbers from the set $\{1,2,\ldots, 3n\}$.  Prove that there are always two among the chosen numbers whose difference is more than $n$ but less than $2n$.  
+
+\item How many six letter words in the English alphabet either begin aa or end zz?
+
+%\item The names of $100$ prisoners are placed in $100$ wooden boxes, one name to a box, and the boxes are lined up on a table in a room.  One by one, the prisoners are led into the room; each may look in at most $99$ boxes, but must leave the room exactly as she found it and is permitted no further communication with the others.
+
+%The prisoners have a chance to plot their strategy in advance, and they are going to need it, because unless \emph{every single prisoner finds her own name} all will subsequently be executed.
+
+%The prisoners huddle together and come up with a few strategies.  One suggests: ``I know what we'll do.  Each one of us will go in there and randomly open $99$ of the boxes.  The odds are good that I'll find my name, so this is probably a decent strategy."  
+
+%A second prisoner suggest: ``I have something a little better.  Let's randomly line ourselves up before going in, and if I am prisoner number $i$ in line, I will open every box except box number $i$''.  
+
+%A third prisoner suggests: ``Why don't we try the natural variation of the thing from lecture (which we all went to before being imprisoned.)  That is, we randomly line ourselves up.  If I am prisoner number $i$ in line, I will open box $i$.  If that box contains the name of prisoner $j$ in line, I will open box $j$ next.  I will continue until I either find my name or I have opened $99$ boxes and I have not found my name''.
+
+%For each of these three strategies write down the probability that the prisoners all find their names.
+
+\end{enumerate}
+
+
+
+
+\end{document}

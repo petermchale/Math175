@@ -1,0 +1,423 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{theo}{Theorem}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\large \bf Final Exam Practice Problems}
+\end{center}
+
+\section{True/False}
+
+\begin{enumerate}
+
+%\item Let $A \subset \{1,2,\ldots, 100\}$ with $|A| = 54$.  Then $A$ contains two numbers $a$ and $b$ such that $a-b = 9$.  
+
+%{\bf Solution}: This is false.  We can take the numbers $\{1,2,\ldots, 9\}, \{19,20,\ldots,27\}, \{37,\ldots, 45\}, \\
+%\{55,\ldots, 63\}, \{73,\ldots, 81\}, \{81,\ldots, 99\}$.  This has exactly $54$ numbers and no two differ by $9$.
+
+
+%\item $n! = o(n^n)$.
+
+%{\bf Solution}:  This is true.  Stirling's formula says that
+%\[
+%n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n,
+%\]
+%which is
+%\[
+%\sqrt{2\pi n} \frac{n^n}{e^n}.
+%\]
+%So, the ratio 
+%\[
+%\frac{n!}{n^n} \sim \frac{\sqrt{2\pi n}}{e^n},
+%\]
+%which goes to zero as $n$ goes to infinty.
+
+\item For a fixed positive integer $n$ define
+\[
+F(t) = \binom{2n}{0} + \binom{2n}{1} + \cdots + \binom{2n}{t-1}.
+\]
+Then for any $n$ and all $t$ satisfying $1 \le t \le n+1$,
+\[
+F(t) \le \frac{t}{2} \cdot \binom{2n}{n}.
+\]
+
+
+
+
+\item Let $F_0 = 0,\ F_1 = 1$ and $F_n = F_{n-1}+F_{n-2}$ for $n\ge 2$.  Then for all $n,\ F_n < \left(\frac{3}{2}\right)^n$.
+
+%\item Let $m$ be an odd number greater than $1$.  Then $m$ appears in Pascal's triangle an even number of times.
+
+%{\bf Solution}: This is true.  If $m = \binom{n}{k}$ then $m = \binom{n}{n-k}$.  So every number appears in a certain number of pairs of this type.  The only way for a number to appear an odd number of times is if $m = \binom{2n}{n}$ for some $n$.  But, we have seen that $\binom{2n}{n}$ is always even, since $1/2\cdot \binom{2n}{n}$ counts the number of ways of making two teams out of $n$ students.
+
+
+\item $F_0 = 0,\ F_1 = 1$ and $F_n = F_{n-1}+F_{n-2}$ for $n\ge 2$.  Let $C_n = \frac{1}{n+1} \binom{2n}{n}$ denote the $n$\textsuperscript{th} Catalan number.  Then $C_n = o(F_{2n})$.
+
+\item We have 
+\[
+\binom{n}{5} \sim \frac{n^{5}}{5!}.
+\]
+
+
+\end{enumerate}
+
+\section{Short Answer}
+
+\begin{enumerate}
+
+\item For which positive integers $n$ and $k$ is $\binom{n}{k+1} = 2 \binom{n}{k}$?
+
+
+%\item In how many ways can the elements of $\{1,2,\ldots, n\}$ be permuted so that $1$ comes before $2$ and $3$ comes before $4$?
+
+%{\bf Solution}: There are $n!$ total permutations.  Given any one, we just isolate the elements $1$ and $2$.  Exactly half of the permutations have $1$ before $2$, since swapping them gives a bijection between the permutations that do have this, and those that do not.  Similarly, half of the permutations have $3$ before $4$.  These two properties involve disjoint sets of elements, so have nothing to do with each other.  So $\frac{n!}{4}$ permutations have this property.
+
+\item How many permutations of $\{1,2,\ldots, 9\}$ have exactly three cycles of length $3$?
+
+
+\item A town has recently constructed ten new intersections.  Some of these will get traffic lights, and some of those that get traffic lights will also get a gas station.  In how many different ways can this happen?
+
+\item How many six-digit positive numbers are there where the sum of the digits is at most $51$?
+
+\item  In how many ways can the elements of $\{1,2,\ldots, n\}$ be permuted so that $1$ comes before $2$ and $3$?
+
+
+%\item Expand 
+%\[
+%(x_1+ \cdots + x_k)^k = \sum_{i_1+\ldots + i_k = k \atop i_1, \ldots, i_k \ge 0} a_{i_1, i_2, \ldots, i_k} x_1^{i_1} x_2^{i_2} \cdots x_k^{i_k}.
+%\]
+%Which coefficient $a_{i_1, i_2, \ldots, i_k}$ is the largest?
+
+%%{\bf Solution}: The multinomial theorem says that the coefficient $a_{i_1, i_2, \ldots, i_k}$ is given by $\binom{k}{i_1! \cdot i_2! \cdots i_k!}$.  Each of these factorials is at least $1$ and we want to make the denominator as small as possible.  Therefore, we want every $i_j!$ to be equal to $1$.  There is exactly one way for this to happen, when each $i_j = 1$.  Therefore, the term with the largest coefficient is $x_1 \cdots x_k$ which has coefficient $k!$.
+
+
+\end{enumerate}
+
+\section{Problems}
+
+
+\begin{enumerate}
+
+\item Take the numbers $1,2, \ldots, 10$ and put them around a circle (in some order).  Prove that, no matter how you arrange them, there will be three consecutive numbers such that their sum is at least $17$.  \\
+For example, if you place the numbers in increasing order, $\{9,10,1\}$ is such a consecutive triple.
+
+
+%\item Suppose we have an alphabet of $2n$ letters.  A `$k$-letter word' in this alphabet is just a sequence of $k$ of these letters.
+
+%\begin{enumerate}
+%\item Let $P(n)$ be the probability that an $n$ letter word from this alphabet contains no repeated letters.  Give $P(n)$ as a function of $n$.
+
+%\item Give an asymptotic formula for this $P(n)$.
+
+
+%\end{enumerate}
+
+%{\bf Solution}: There are $(2n)^n$ total words of length $n$.  The number with no repeated letters is $2n \cdot (2n-1) \cdots (n+1) = \frac{(2n)!}{n!}$.  Therefore,
+%\[
+%P(n) = \frac{(2n)!}{(2n)^n \cdot n!}
+%\]
+
+%We give an asymptotic formula using Stirling's formula to get rid of the factorials.  We see that
+%\[
+%\frac{(2n)!}{n!} \sim \frac{\sqrt{2\pi (2n)} \left(\frac{2n}{e}\right)^{2n}}{\sqrt{2\pi n} \left(\frac{n}{e}\right)^{n}} = \sqrt{2}\cdot \frac{n^n \cdot 2^{2n}}{e^n}.
+%\]
+%Therefore, 
+%\[
+%P(n) \sim \frac{\sqrt{2} \cdot n^n \cdot 2^{2n}}{e^n \cdot 2^n \cdot n^n} = \sqrt{2} \cdot \left(\frac{2}{e}\right)^n.
+%\]
+
+
+\item Prove that for all integers $n\ge 2$,
+\[
+2^{n-2} \cdot n \cdot (n-1) = \sum_{k=2}^n k (k-1) \binom{n}{k}.
+\]
+
+%\item Prove that if $k$ and $n$ are positive integers, and $k \le n-1$, then we have
+%\[
+%\binom{n}{k-1} \cdot \binom{n}{k+1} \le \binom{n}{k}^2.
+%\]
+
+%A sequence of real numbers $a_0, a_1, \ldots, a_n$ is called \emph{log concave} if for all $1\le i \le n-1$, the inequality $a_{i-1}a_{i+1} \le a_i^2$ is satisfied.  This problem asks us to prove that the sequence $\binom{n}{0}, \binom{n}{1},\ldots, \binom{n}{n}$ is log concave.
+
+%{\bf Solution}: We expand these binomial coefficients in terms of factorials and see that we must show
+%\[
+%\frac{n!}{(k-1)! (n-k+1)!} \cdot \frac{n!}{(k+1)! (n-k-1)!} \le \frac{(n!)^2}{(k!)^2 ((n-k)!)^2}.
+%\]
+%Dividing both sides by the right hand side tells us that we must now show
+%\[
+%\frac{k}{k+1} \cdot \frac{n-k}{n-k+1} \le 1,
+%\]
+%which is obviously true since both terms in the product are less than $1$.
+
+
+\item At a tennis tournament there were $2^n$ participants and any two of them had played against each other exactly one time.  Show that we can find $n+1$ players who can form a line so that everyone has defeated all of the players who are behind her in line.
+
+\item Prove for all positive integers $n$,
+\[
+n\cdot \binom{2n-1}{n-1} = \sum_{k=1}^n k \cdot \binom{n}{k}^2.
+\]
+
+\item Show that every positive integer $n$ possesses a representation 
+\[
+n = \sum_{k\ge 1} a_k k!,
+\]
+with $0 \le a_k \le k$.
+
+
+
+%\item Prove that 
+%\[
+%\binom{n}{r} \binom{r}{k} = \binom{n}{k} \binom{n-k}{r-k},
+%\]
+%and conclude that 
+%\[
+%\sum_{k=0}^m \binom{n}{k} \binom{n-k}{m-k} = 2^m \binom{n}{m}.
+%\]
+
+%{\bf Solution}: We prove the first part algebraically.  We have
+%\begin{eqnarray*}
+%\binom{n}{r} \binom{r}{k} & = &  \frac{n!}{r! (n-r)!} \cdot \frac{r!}{k! (r-k)!} \\
+%& = &  \frac{n! (n-k)!}{k! (n-k)!(n-r)!(r-k)!} = \binom{n}{k}\binom{n-k}{r-k}.
+%\end{eqnarray*}
+
+%We now substitute
+%\[
+%\binom{n}{k} \binom{n-k}{m-k} = \binom{n}{m}\binom{m}{k},
+%\]
+%and note that
+%\[
+%\sum_{k=0}^m \binom{n}{m}\binom{m}{k} = \binom{n}{m} \sum_{k=0}^m \binom{m}{k} = \binom{n}{m} \cdot 2^m,
+%\]
+%completing the proof.
+
+
+%\item What is the probability that a hand of thirteen playing cards from an ordinary 52-card deck contains at least one card of each suit?
+
+%{\bf Solution}: We approach both problems with the same strategy- inclusion/exclusion.  There are $\binom{52}{13}$ total $13$-card hands.  We want to subtract off those that use fewer than $4$ suits.
+
+%The number of hands of cards that use only Hearts is $\binom{13}{13}$.  The number that only use Hearts and Diamonds is $\binom{26}{13}$.  The number that only use Hearts, Diamonds, and Clubs is $\binom{39}{13}$.  The fact that we choose these particular suits does not matter- this gives the count for the number of hands using at most $1,2$, or $3$ chosen suits, respectively.
+
+%By inclusion exclusion, the number of hands using fewer than $4$ suits is
+%\[
+%\binom{4}{3} \cdot \binom{39}{13} - \binom{4}{2} \cdot \binom{26}{13} + \binom{4}{1} \cdot \binom{13}{13}.
+%\]
+%Therefore, the total number of hands using all four suits is
+%\[
+%\binom{52}{13} - 4\cdot \binom{39}{13} + 6\cdot \binom{26}{13} - 4 \cdot 1.
+%\]
+
+
+\item A store has $n$ different products for sale.  Each of them has a different cost that is at least one dollar, at most $n$ dollars, and is a whole number.  A customer is allowed to inspect exactly $k$ different items.  After doing so, he purchases the least expensive of those $k$ items he inspected.  Show that on average he will pay $\frac{n+1}{k+1}$ dollars.\\
+
+{\bf Note}: This problem is hard.  You might want to try to do this one last after you've done the others.
+
+\item Assume that a positive integer cannot have $0$ as its leading digit.
+\begin{enumerate}
+\item How many five-digit positive numbers have no repeated digits at all (for example, $12345$ but not $12341$)?
+
+
+
+
+\item How many have no consecutive repeated digits (for example, $12341$ but not $12331$)?
+
+\item How many have at least one run of consecutive repeated digits (for example, $11234, 22323, \\ 45551$, or $11551$, but not $12121$)?
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Find the smallest positive integer $m$ such that $m^2 < 2^{m-1}$.
+
+\item Let $m$ be the number from part (a).  Prove the following statement by induction.  For every $n \ge m$, $n^2 < 2^{n-1}$.
+
+\end{enumerate}
+
+\item Robin Hood shoots arrows at a target. The target is an equilateral triangle of side length $1$.  Robin Hood never misses the target.  When an arrow hits the target, it stays there.
+\begin{enumerate}
+\item Robin Hood has shot $5$ arrows.  Prove that there are two arrows such that the distance between them does not exceed $1/2$.
+
+\item Suppose that $n>2$ and that Robin Hood has shot $n^2+1$ arrows.  Prove that there are two arrows such that the distance between them does not exceed $1/n$.
+
+\end{enumerate}
+
+%\item Take the numbers $1,2, \ldots, 10$ and put them around a circle (in some order).  Prove that, no matter how you arrange them, there will be three consecutive numbers such that their sum is at least $17$.  For example, if you place the numbers in increasing order, $\{9,10,1\}$ is such a consecutive triple.
+
+%{\bf Solution}:  We argue by the pigeonhole principle.  We take the sum over all consecutive triples
+
+%\item Let $F_1 = F_2 = 1$ and $F_n = F_{n-1} + F_{n-2}$ for $n\ge 3$.  Compute 
+%\[
+%\lim_{n\rightarrow \infty} \frac{F_{2n}}{(F_n)^2}.
+%\]
+
+%{\bf Solution}:  Let $\varphi = \frac{1+\sqrt{5}}{2}$ and $\psi = \frac{1-\sqrt{5}}{2}$.  We know that
+%\[
+%F_n = \frac{1}{\sqrt{5}} \left(\varphi^n - \psi^n\right).
+%\]
+%Since $|\psi|^n = o\left(\varphi^n\right)$ we have 
+%\[
+%F_n \sim \frac{1}{\sqrt{5}} \varphi^n
+%\]
+%and
+%\[
+%F_{2n} \sim \frac{1}{\sqrt{5}} \varphi^{2n}.
+%\]
+%Therefore 
+%\[
+%\lim_{n\rightarrow \infty} \frac{F_{2n}}{(F_n)^2} = \frac{1}{\sqrt{5}} \cdot 5 = \sqrt{5}.
+%\]
+
+\item Prove that for any positive integer $n\ge 2$,
+\[
+\binom{2n}{n} \le 3 \cdot 2^{2n-3}.
+\]
+
+\item Determine which of the following statements are true:
+\begin{enumerate}
+\item $n! \sim \left(\frac{n+1}{2}\right)^n$,
+\item $n! \sim ne (n/e)^n$,
+\item $n! = o((n/e)^n)$,
+\item $\ln(n!) \sim n \cdot \ln(n)$.
+\end{enumerate}
+
+\item Fix a positive integer $n$ and consider 
+\[
+\binom{n}{k+1} - \binom{n}{k}.
+\]
+For which value of $k$ is this difference largest?
+
+{\bf Hint}:  This problem is pretty challenging.  One idea is to consider the difference of consecutive differences.  That is, for which values of $k$ is
+\[
+\left(\binom{n}{k+1} - \binom{n}{k}\right) - \left(\binom{n}{k} - \binom{n}{k-1}\right) \ge 0?
+\]
+
+\item \begin{enumerate}
+
+\item State Stirling's asymptotic formula for the size of $n!$.
+
+\item Use Stirling's formula to give an asymptotic formula for $\binom{2n}{n}$.
+
+\item Use Stirling's formula to give an asymptotic formula for
+\[
+\frac{\binom{2n}{n-t}}{\binom{2n}{n}}.
+\]
+Your answer should be a function for $m$ and $t$ and should not involve any factorials.  
+
+
+\end{enumerate}
+
+{\bf Note:} When you plug in $t=0$ for your formula in (c), you should definitely get $1$.
+%\item \begin{enumerate}
+
+%\item State the Law of Large Numbers.  You can state it in either of two different ways- explaining it in terms of the probability that when you flip a coin $n$ times the number of heads falls in a certain range, or in terms of an asymptotic statement about a certain sum of binomial coefficients.
+
+%\item Consider the following three functions of $n$.
+%\begin{enumerate}
+
+%\item The probability that in $2n$ coin flips you get between $.99 n$ and $1.01 n$ heads.
+
+%\item The probability that in $2n$ coin flips you get between $n-1000$ and $n+1000$ heads.
+
+%\item The probability that in $2n$ coin flips you get between $n-\sqrt{n}$ and $n+\sqrt{n}$ heads.
+
+%\end{enumerate}
+
+%For each of these three, explain whether as $n$ goes to infinity the function converges to $0, 1$, or some real number strictly between $0$ and $1$.
+
+
+%\end{enumerate}
+
+%{\bf Note}: Feel free to use anything we proved in class without proving it again.
+
+%{\bf Solution}:  The law of large numbers says that for any $\epsilon> 0$ if we flip a coin $n$ times, then the probability that the fraction of heads is between $1/2-\epsilon$ and $1/2+\epsilon$ goes to $1$ as $n$ goes to infinity.  Said another way, this says that
+%\[
+%\sum_{k = \lceil (1/2-\epsilon)n\rceil}^{\lfloor (1/2 +\epsilon) n\rfloor} \binom{n}{k} \sim 2^n.
+%\]
+
+%The first probability goes to $1$ as $n$ goes to infinity.  This is exactly given by the statement of the law of large numbers.
+
+%The second probability goes to $0$.  We can see this using the Central Limit Theorem, but there is a more direct way.  This probability is at most $2001\cdot \binom{2n}{n}/4^n$, and the previous problem shows that as $n$ goes to infinity this is asymptotic to
+%\[
+%\frac{2001}{\sqrt{\pi n}},
+%\]
+%which clearly goes to zero as $n$ goes to infinity.
+
+%For the third statement, we note that the random variable that comes up $1$ if a coin is heads and $0$ otherwise has variance $1/4$.  So the variance of the random variable that comes from flipping a coin $2n$ times and outputting the number of heads is $n/2$.  The Central Limit Theorem then says that the probability that we get between $n$ and $n+\sqrt{n}$ heads approaches the integral 
+%\[
+%\frac{1}{\sqrt{2\pi}} \cdot \int_0^{\sqrt{2}} e^{-x^2/2} dx \approx .42.
+%\]
+%So, the probability that you get between $n-\sqrt{n}$ and $n + \sqrt{n}$ heads approaches a real number than is approximately $.84$.
+
+
+%\item Order the following functions according to their growth rate and express the ordering using asymptotic notation.
+
+%\begin{enumerate}
+%\item $\left(\ln(n)\right)^{\ln(\ln(n))}$,
+
+%\item $n \cdot e^{\sqrt{\ln(n)}}$,
+
+%\item $n^2$.
+%\end{enumerate}
+
+%{\bf Solution}: We follow the strategy of a problem from Homework 6, first writing each function as $e^{f(n)}$ and then comparing the growth rate of these functions in the exponent.  The first function is
+%\[
+%\left(e^{\ln(\ln(n))}\right)^{\ln(\ln(n))} = e^{\ln(\ln(n))^2}.
+%\]
+%The second function is 
+%\[
+%e^{\ln(n)}\cdot e^{\sqrt{\ln(n)}} = e^{\ln(n) + \sqrt{\ln(n)}}.
+%\]
+%The third function is
+%\[
+%\left(e^{\ln(n)}\right)^2 = e^{2\ln(n)}.
+%\]
+
+%We now check that $2\ln(n)$ grows faster than $\ln(n) + \sqrt{\ln(n)}$ which grows faster than $\ln(\ln(n))^2$.  For the first comparison we check that
+%\[
+%\lim_{n\rightarrow \infty} \ln(n) + \sqrt{\ln(n)} - 2\ln(n) = \lim_{n\rightarrow \infty} \sqrt{\ln(n)} - \ln(n),
+%\]
+%which clearly goes to negative infinity.  So (b) = o(c).
+
+%For the other comparisons we check the growth rates by taking logarithms one more time.  Note that
+%\[
+%\ln\left(\ln(\ln(n))^2\right) = 2 \ln(\ln(\ln(n))).
+%\]
+%Note that for $n \ge e$ we have
+%\[
+%\ln(n) \le \ln(n) + \sqrt{\ln(n)} \le 2 \ln(n),
+%\]
+%since $\sqrt{x} < x$ for $x > 1$.
+
+%We will show that $\ln(\ln(n))^2 = o(\ln(n))$ which will shows that (a) = o(b) and a = o(c).  As $n$ goes to infinity
+%\[
+%2 \ln(\ln(\ln(n))) -  \ln(\ln(n))
+%\]
+%goes to minus infinity.  This completes the proof.
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}

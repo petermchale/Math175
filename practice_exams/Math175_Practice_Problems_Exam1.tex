@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{theo}{Theorem}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\large \bf Exam 1 Practice Problems}
+\end{center}
+
+
+
+
+\section{True/False: 3 Points Each}
+
+\begin{enumerate} 
+
+\item For any positive integer $n$,
+\[
+\sum_{k=0}^n (-1)^k \cdot \binom{n}{k} \cdot 2^{k} = (-1)^n.
+\]
+
+\item Every positive integer can be written in a unique way as a sum of Fibonacci numbers.
+
+\end{enumerate}
+
+\section{Problems: 10 Points Each}
+
+\begin{enumerate}
+
+
+
+\item Prove that for $n\ge 1$,
+\[
+\sum_{i=1}^n (i \cdot 2^i - 1) = (n-1) 2^{n+1} - n + 2.
+\]
+
+
+
+\item Suppose I play a game where I flip a coin $n$ times, write down the number of heads, then flip a coin $n$ times again and write down the number of heads in this second set of $n$ flips.  I win if the two numbers are the same and lose otherwise.  Give a formula in terms of $n$ for the probability that I win this game. \\
+(Your final answer for this formula should not involve a sum.)
+
+(For example, if $n = 4$ I win if the first four flips are HHTH and the second four flips are THHH, but I lose if the first four flips are HTTH and the second four are HHHT.)
+
+
+
+\item Two systems are proposed for the Irvine Lottery.  In the first system, players select six \emph{different} numbers from $\{1,2,\ldots, 50\}$ for their tickets.  Two tickets are considered the same if they contain the same numbers in different orders.
+
+In the second system, players select six numbers from $\{1,2,\ldots, 45\}$ \emph{and} may select any number as many times as they want.  In a drawing for this second system each ball selected in the lottery drawing is replaced before another ball is selected. 
+
+Two tickets are considered the same if they contain the same multiset of numbers in different orders. For example, $\{3,3,1,1,1,2\}$ and $\{1,1,1,3,2,3\}$ are the same ticket and both are winners if $2$ is the first ball drawn, the next two balls are $3$, and the last three balls are $1$.
+
+How many different tickets are there for each system?  
+
+
+
+\item A palindrome is a word that is spelled the same backwards and forwards- for example, KAYAK is one, but APPLE is not.
+\begin{enumerate}
+\item How many five letter palindromes are there using the English alphabet?
+\item How many six letter palindromes are there using the English alphabet?
+\end{enumerate}
+
+
+
+
+
+\item Prove that if $n$ and $k$ are nonegative integers and $m$ is an integer with $m \le n$, then
+\[
+\binom{n}{k} \cdot \binom{k}{m} = \binom{n}{m} \cdot \binom{n-m}{k-m}.
+\]
+
+
+
+
+
+\item Prove that for any positive integers $n > m$,
+\[
+\sum_{k=0}^m (-1)^k \binom{n}{k} = (-1)^m \binom{n-1}{m}.
+\]
+
+
+
+\item In how many ways can you cover a $2\times N$ chessboard with $2\times 1$ dominoes?
+
+
+\item Prove by induction that for any positive integer $n\ge 2$,
+\[
+\binom{2n}{n} \le 3 \cdot 2^{2n-3}.
+\]
+
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}
