@@ -1,3 +1,7 @@
+*.aux 
+*.log
+*.gz
+*.webloc
 .DS_Store
 *Solutions*
 *HW0*
