@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\Large \bf Homework 2}\\
+{\Large Due in Discussion Tuesday, January 30\\
+}
+\end{center}
+
+\vspace{5mm}
+
+When you write up your homework please {\bf justify your solutions}.  If a problem asks you to count something it's generally not enough just to give a number or give a formula, please explain how you got to that solution.  In general, the more complete the sentences you write are, the clearer your solutions will be.  
+
+So far, we have talked about:
+\begin{enumerate} 
+\item 
+Subsets of $\{1,2,\ldots, n\}$ of even and odd size and showed how this led to an identity involving sums of binomial coefficients
+\item 
+Counting with repetition using `Stars and Bars'.  This material is covered in Section 3.4 of LVP and 2.6.2 of HMM. 
+\item
+The number of compositions of a number $n$, that is, the number of ways of writing $n$ as a sum of positive integers where order matters.
+\item 
+Words without repeated letters and the birthday problem.  The first two pages of Section 2.5 of LVP discuss this material. 
+\end{enumerate} 
+
+The rest of Section 2.5 of LVP  helps you estimate the probability that a word of length $k$ from an alphabet of $n$ letters has a repeated letter by using properties of the logarithm.  You should read this, but I won't cover this material directly in lecture.
+
+At this point you should have read all of Chapter 1 of LVP, and also Section 2.5 and Section 3.4.  In our next lecture we will discuss induction, so please read Section 2.1 before then.  Our next big topic will be Pascal's triangle and Binomial Coefficients, following Sections 3.1 - 3.6.
+
+You should also have read Section 2.1 of the HHM textbook.  The material of Sections 3.1-3.6 of LVP roughly parallels Sections 2.2 and 2.3 of HHM, which will occupy us for the next two weeks or so.
+
+\newpage
+
+\centerline{ \bf \Large Problems}
+
+
+\begin{enumerate}
+
+\item {\bf Exercise 2.6.2.5 of HHM}:  Suppose that an unlimited number of jelly beans is available in each of five different colors: red, green, yellow, white, and black.  
+\begin{enumerate}
+\item How many ways are there to select twenty jelly beans?
+
+\item How many ways are there to select twenty jelly beans if we must select at least two jelly beans of each color?
+
+\end{enumerate}
+
+
+\item {\bf Exercise 2.6.2.6 of HHM}:
+A catering company brings fifty identical hamburgers to a party with twenty guests.  
+\begin{enumerate}
+\item How many ways can the hamburgers be divided among the guests, if none is left over?
+
+\item How many ways can the hamburgers be divided among the guests, if every guest receives at least one hamburger, and none is left over?
+
+\item Repeat these problems if there may be burgers left over.
+\end{enumerate}
+
+
+\item 
+\begin{enumerate}
+\item How many compositions of $n$ use only parts that are even?  \\
+For example, when $n = 4$ we only want to count the two compositions $(4)$ and $(2+2)$.
+\item How many compositions of $n$ only use parts that are odd?
+\item How many weak compositions of $n$ into exactly $k$ parts use only parts that are even?
+\item How many compositions of $n$ into an even number of parts only use parts that are even?  
+
+{\bf Hint: It might be useful to compute these answers for some small examples, like $n \le 5$, and see if you notice any patterns.  Also, it might be useful to consider different cases based on where $n$ is even or odd.}
+\end{enumerate}
+
+\item A standard die has six faces labeled $\{1,2,3,4,5,6\}$.  When you roll the die, each face comes up with probability exactly $\frac{1}{6}$.
+
+\begin{enumerate}
+
+\item Suppose you roll a die $k$ times.  What is the probability that you get $k$ distinct numbers? (Your answer should be a function of $k$.)
+
+
+\item Write down a table that shows these values for all $1\le k \le 6$.  What is the smallest value of $k$ for which this is less than $1/2$?
+
+{\bf Note}: You will probably need to use a computer or calculator to compute these values.
+
+\end{enumerate}
+
+\item A standard deck of playing cards has $4$ suits (spades $\spadesuit$, diamonds $\diamondsuit$, clubs $\clubsuit$, and hearts $\heartsuit$). In each suit there is exactly one card from each of $13$ denominations ($2,3,4,\ldots, 10$, Jack, Queen, King, and Ace).  This gives $52$ total cards (for example the $2$ of Diamonds and the Jack of Hearts).
+
+Suppose you draw $5$ cards at random.
+\begin{enumerate}
+\item What is the probability that you do not have two cards of the same denomination?
+\item What is the probability that you have four cards of the same denomination? (This is called a `Four of a Kind'.)
+\item What is the probability that you have three, but not four cards of the same denomination? 
+\item What is the probability that you have three cards in one denomination, and your remaining two cards are in the same denomination? (This is called a `Full House'.)
+\end{enumerate}
+
+
+\item In lecture we saw that once there are $23$ or more people in a room, there is more than a $50\%$ chance of having two people with the same birthday.  (For simplicity we have assumed that there are $365$ possibly birthdays and that they are all equally likely.)  
+
+For $k$ people we can compute this probability exactly.  We line up the $k$ people in some order and ask each of them to write down their birthday.  This gives a word of length $k$ from an alphabet of $365$ letters.  Now we consider the birthday problem for triples.  I will break it down into a bunch of steps to help guide you through it.
+
+\begin{enumerate}
+\item What is the probability that among $k$ people the first two of them have the same birthday, nobody else has that birthday, and every other person has a distinct birthday?
+\item What is the probability that among $k$ people exactly two of them have the same birthday?
+\item What is the probability that among $k$ people, the first two people have the same birthday, the second two people have the same birthday (different from the first pair), and everyone else has a distinct birthday?
+\item What is the probability that among $k$ people, exactly two pairs of people share a birthday (and no three people have the same birthday)?
+\item Show that the probability that among $k$ people there are exactly $m$ pairs of people with the same birthday, and no three people have the same birthday is given by
+\[
+\frac{365! k!}{m! (365-k+m)! 2^m (k-2m)!} \cdot \frac{1}{365^k}.
+\]
+\item Write down a function that gives the probability that among $k$ people, no three of them have the same birthday.  This is just a sum involving the previous part of this problem.
+
+\item \textbf{Bonus/Not Required}: Use a computer to evaluate this probability for some values of $k$.  How many people do we need to have in a room before there is more than a $50\%$ chance that at least three people share a common birthday?
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+\end{document}
