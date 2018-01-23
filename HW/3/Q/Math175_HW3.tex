@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\Large \bf Homework 3}\\
+{\Large Due in class Friday, February 3. \\
+Please email \texttt{nckaplan@math.uci.edu} with questions.}
+\end{center}
+
+\vspace{5mm}
+
+This week we started by finishing our discussion of the birthday problem.  Specifically, we talked about the probability of a shared birthday among $k$ people when there are $n$ possible birthdays, but probability of being born on each day is not necessarily uniform.  We discussed the case of $2$ people and $2$ birthdays in detail and then set up the problem of $2$ people and $k$ birthdays.
+
+We then talked about proof by induction, which is the subject of Section 2.1 of LVP.  We gave some examples including the sum of the first $n$ powers of $2$ and the sum of the first $n$ positive integers.  
+
+We proved a basic proposition about binomial coefficients, equation (3.2) in Section 3.6 of LVP.  We then talked about Pascal's Triangle (LVP Section 3.5) and then many patterns within it.
+
+We also introduced the Fibonacci numbers (LVP Chapter 4) and explained how they arise as sums of shallow diagonals in Pascal's triangle.  We gave a formula for the Fibonacci numbers (Theorem 4.3.1 in LVP).
+
+At this point, you should have read all of Chapter 0 and Chapter 1 of LVP.  You should read Section 2.1 on Induction, and it would also be good to read the rest of Chapter 2 on combinatorial tools.  In the next lecture we will prove some additional identities in Section 3.6 and some additional properties of Fibonacci numbers (Sections 4.1 and 4.2).  We will soon prove the Binomial Theorem, which is covered in Section 3.1  I would recommend reading all of Chapter 3 except Sections 3.7 and 3.8, and all of Chapter 4.  Much of the material on binomial coefficients is also covered in Section 2.2 of the HHM book.
+
+
+
+\newpage
+
+
+\centerline{ \bf \Large Problems}
+
+
+\begin{enumerate}
+
+\item We saw in lecture that if there are two possible birthdays $A$ and $B$  that occur with probabilities $p$ and $1-p$, the the probability that two people have a shared birthday is $2 p(1-p)$.  This is a function of a single variable $p$ that reaches a maximum at $p = \frac{1}{2}$.  We can see this by taking the derivative with respect to $p$ to find a critical point and checking that it gives a maximum.
+
+Suppose there are three possible birthdays: $A,B,C$ and they occur with probabilities $p_1, p_2$, and $p_3$, respectively.  A special case of what we say in class is that the probability that two people do not share a birthday is given by
+\[
+f(p_1, p_2, p_3) = 2\left(p_1 p_2 + p_1 p_3 + p_2 p_3\right).
+\]
+\begin{enumerate}
+\item Suppose that $p_3$ is fixed.  We see that $p_1 + p_2 = 1-p_3$, so $p_2 = (1-p_3) - p_1$.  Find the value of $p_1$ that maximizes the function \emph{of a single variable}
+\[
+f(p_1) = 2 \left(p_1 ((1-p_3) - p_1) + p_1 p_3 + ((1-p_3) - p_1) p_3\right).
+\]
+
+\item We saw in class that when there are $n$ possible birthdays with probabilities $p_1,p_2,\ldots, p_n$, the probability that two people do not have a shared birthday is given by
+\[
+f(p_1,\ldots, p_n) = 2 \sum_{1\le i < j \le n} p_i p_j.
+\]
+
+Suppose that $p_3,\ldots, p_n$ are fixed.  As above, we can express $p_2$ in terms of $p_1$ and these fixed constants.  Find the value of $p_1$ that maximizes the function \emph{of a single variable}
+\[
+f(p_1) = 2 \sum_{1\le i < j \le n} p_i p_j.
+\]
+
+\item Using the previous result, show that the uniform distribution, where each $p_i = \frac{1}{n}$ maximizes the probability that our two people do not share the same birthday.
+
+\item {\bf Bonus (Much harder than any other problem so far) -- Not Required!}: \\
+Adapt this argument to show that if there are $n$ birthdays and $k$ people the uniform distribution where each $p_i = \frac{1}{n}$ maximizes the probability that no two people share a birthday.
+
+\end{enumerate}
+
+\item {\bf Exercise 2.5.1 of LVP}: What is the following sum?
+\[
+\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3} +\frac{1}{3\cdot 4} + \cdots + \frac{1}{(n-1)\cdot n}.
+\]
+Experiment, conjecture the value, and then prove it by induction.
+
+\item {\bf Exercise 2.5.2 of LVP}: What is the following sum?
+\[
+0\cdot \binom{n}{0} + 1 \cdot \binom{n}{1} + 2\cdot \binom{n}{2} + \cdots + (n-1) \binom{n}{n-1} + n \cdot \binom{n}{n}.
+\]
+Experiment, conjecture the value, and then prove it by induction.  (You many want to try to prove this result by induction and also by combinatorial arguments.)
+
+\item In order to get a feel for how induction arguments work, it is instructive to see a bunch of convincing looking induction arguments that are actually wrong.  Read Exercises 2.1.12 and 2.1.13 in the LVP book.  There are solutions for both of these in the back of the book.  
+
+
+Identify and explain the flaw in the following two induction `proofs'.
+\begin{enumerate}
+\item CLAIM: For all positive integers $n$,
+\[ 
+\sum_{j=1}^n j = \frac{1}{2} \left(n+\frac{1}{2}\right)^2.
+\]
+We check that this holds for $n=1$.  We suppose that this is true for $n$ and prove it for $n+1$.  We have
+\begin{eqnarray*} 
+\sum_{j=1}^{n+1} j & = &  \sum_{j=1}^n j + (n+1) \\
+& = & \frac{1}{2} \left(n+\frac{1}{2}\right)^2 + (n+1)\ \text{ by the induction hypothesis} \\
+& = & \frac{1}{2}\left(n^2 + n +\frac{1}{4} + 2n+2\right) \\
+& = & = \frac{1}{2} \left( (n+1) + \frac{1}{2} \right)^2.
+\end{eqnarray*}
+This is what we wanted to show.  Therefore this statement holds for all positive integers $n$.
+
+\item Claim: All positive integers are equal.  To prove this claim, we will prove by induction that for all positive integers $n$ the following statement holds.
+\[
+\text{For any positive integers } x \text{ and } y \text{, if } \max(x,y) = n \text{ , then } x=y.
+\]
+(Here $\max(x,y)$ denote the larger of the two numbers $x$ and $y$, or the common value if both are equal.)  We call this statement $P(n)$.  Clearly $P(1)$ is true, since $\max(x,y) = 1$ forces $x=1$ and $y=1$, so $x=y$.
+
+Suppose that $P(n)$ is true.  We will prove that $P(n+1)$ is true.  Let $x,y$ be positive integers such that $\max(x,y) = n+1$.  Then 
+\[
+\max(x-1,y-1) = \max(x,y) -1 = n+1-1 = n.
+\]
+By the induction hypothesis, it follows that $x-1 = y-1$, and therefore $x=y$.  This proves $P(n+1)$ holds.  We now conclude that $P(n)$ holds for all positive integers $n$, so $\max(1,n) = n$ for any positive integer $n$. Therefore $1=n$ for any positive integer $n$.
+
+\end{enumerate}
+
+
+
+\item  In class we saw that the sum of the first $n$ positive integers is $\frac{n(n+1)}{2}$.  Exercise 2.1.8 in LVP, which has a solution in the back, shows that $\sum_{j=1}^n  j^2 = \frac{n(n+1)(2n+1)}{6}$. 
+\begin{enumerate}
+\item Prove by induction that 
+\[
+\sum_{j=1}^n j^3 = \left( \sum_{j=1}^n j \right)^2 = \frac{n^2 (n+1)^2}{4}.
+\]
+\item Prove using induction that 
+\[
+\sum_{j=1}^n (-1)^{j-1} j^2 = (-1)^{n-1} \left(\frac{n(n+1)}{2}\right).
+\]
+\end{enumerate}
+
+\item 
+\begin{enumerate} 
+\item Use the Hockey-Stick Identity from lecture, equation (3.5) on page 53 of the LVP book, to prove the following:
+\[ 
+\binom{r}{r} + \binom{r+1}{r} + \cdots + \binom{n}{r} = \binom{n+1}{r+1}.
+\]
+\item In lecture we gave an inductive proof of the Hockey-Stick identity.  Give a combinatorial proof.  It's fine to give a combinatorial proof of the identity from part (a) of this problem, rather than of the Hockey-Stick result directly.
+
+It will be helpful to look at Exercise 3.6.4 and its Hint in the back of the LVP book.
+\end{enumerate}
+
+
+
+\item For this problem, imagine we are flipping a fair coin.  That is, on each flip there is a $50\%$ chance of getting H and a $50\%$ chance of getting T.  We have already seen that there are $2^n$ total outcomes when flipping $n$ times, since this is the same as a word of length $n$ made up of H's and T's.  These questions look like they are about probability, but they can be interpreted as questions about counting words from a two-letter alphabet with certain properties.
+\begin{enumerate}
+\item Flip a coin $2n$ times.  What is the probability of getting either $n-1$ heads or $n$ heads?
+\item Suppose you flip a coin $2n+1$ times.  What is the probability of getting either $n$ heads or $n+1$ heads? 
+\item Show that your answers to parts (a) and (b) are equal.  You can do this using a binomial identity from lecture, or (and this solution is nicer), you can give a combinatorial interpretation of what's going on here.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+\end{document}
