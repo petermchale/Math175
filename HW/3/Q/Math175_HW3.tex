@@ -20,13 +20,12 @@
 \begin{center}
 {\Large \bf Math 175: Combinatorics} \\
 {\Large \bf Homework 3}\\
-{\Large Due in class Friday, February 3. \\
-Please email \texttt{nckaplan@math.uci.edu} with questions.}
+{\Large Due in Discussion Thursday, February 8.}
 \end{center}
 
 \vspace{5mm}
 
-This week we started by finishing our discussion of the birthday problem.  Specifically, we talked about the probability of a shared birthday among $k$ people when there are $n$ possible birthdays, but probability of being born on each day is not necessarily uniform.  We discussed the case of $2$ people and $2$ birthdays in detail and then set up the problem of $2$ people and $k$ birthdays.
+This week we started by finishing our discussion of the birthday problem.  Specifically, we talked about the probability of a shared birthday among $k$ people when there are $n$ possible birthdays, but probability of being born on each day is not necessarily uniform.  We discussed the case of $2$ people and $2$ birthdays in detail.
 
 We then talked about proof by induction, which is the subject of Section 2.1 of LVP.  We gave some examples including the sum of the first $n$ powers of $2$ and the sum of the first $n$ positive integers.  
 
@@ -34,7 +33,7 @@ We proved a basic proposition about binomial coefficients, equation (3.2) in Sec
 
 We also introduced the Fibonacci numbers (LVP Chapter 4) and explained how they arise as sums of shallow diagonals in Pascal's triangle.  We gave a formula for the Fibonacci numbers (Theorem 4.3.1 in LVP).
 
-At this point, you should have read all of Chapter 0 and Chapter 1 of LVP.  You should read Section 2.1 on Induction, and it would also be good to read the rest of Chapter 2 on combinatorial tools.  In the next lecture we will prove some additional identities in Section 3.6 and some additional properties of Fibonacci numbers (Sections 4.1 and 4.2).  We will soon prove the Binomial Theorem, which is covered in Section 3.1  I would recommend reading all of Chapter 3 except Sections 3.7 and 3.8, and all of Chapter 4.  Much of the material on binomial coefficients is also covered in Section 2.2 of the HHM book.
+At this point, you should have read all of Chapter 1 of LVP.  You should read Section 2.1 on Induction, and it would also be good to read the rest of Chapter 2 on combinatorial tools.  We will soon prove the Binomial Theorem, which is covered in Section 3.1.  I would recommend reading all of Chapter 3 (except Sections 3.7 and 3.8) and all of Chapter 4.  Much of the material on binomial coefficients is also covered in Section 2.2 of the HHM book.
 
 
 
@@ -48,7 +47,7 @@ At this point, you should have read all of Chapter 0 and Chapter 1 of LVP.  You 
 
 \item We saw in lecture that if there are two possible birthdays $A$ and $B$  that occur with probabilities $p$ and $1-p$, the the probability that two people have a shared birthday is $2 p(1-p)$.  This is a function of a single variable $p$ that reaches a maximum at $p = \frac{1}{2}$.  We can see this by taking the derivative with respect to $p$ to find a critical point and checking that it gives a maximum.
 
-Suppose there are three possible birthdays: $A,B,C$ and they occur with probabilities $p_1, p_2$, and $p_3$, respectively.  A special case of what we say in class is that the probability that two people do not share a birthday is given by
+Suppose there are three possible birthdays: $A,B,C$ and they occur with probabilities $p_1, p_2$, and $p_3$, respectively.  A special case of what we saw in class is that the probability that two people do not share a birthday is given by
 \[
 f(p_1, p_2, p_3) = 2\left(p_1 p_2 + p_1 p_3 + p_2 p_3\right).
 \]
@@ -58,7 +57,7 @@ f(p_1, p_2, p_3) = 2\left(p_1 p_2 + p_1 p_3 + p_2 p_3\right).
 f(p_1) = 2 \left(p_1 ((1-p_3) - p_1) + p_1 p_3 + ((1-p_3) - p_1) p_3\right).
 \]
 
-\item We saw in class that when there are $n$ possible birthdays with probabilities $p_1,p_2,\ldots, p_n$, the probability that two people do not have a shared birthday is given by
+\item When there are $n$ possible birthdays with probabilities $p_1,p_2,\ldots, p_n$, the probability that two people do not have a shared birthday is given by
 \[
 f(p_1,\ldots, p_n) = 2 \sum_{1\le i < j \le n} p_i p_j.
 \]
@@ -69,9 +68,6 @@ f(p_1) = 2 \sum_{1\le i < j \le n} p_i p_j.
 \]
 
 \item Using the previous result, show that the uniform distribution, where each $p_i = \frac{1}{n}$ maximizes the probability that our two people do not share the same birthday.
-
-\item {\bf Bonus (Much harder than any other problem so far) -- Not Required!}: \\
-Adapt this argument to show that if there are $n$ birthdays and $k$ people the uniform distribution where each $p_i = \frac{1}{n}$ maximizes the probability that no two people share a birthday.
 
 \end{enumerate}
 
@@ -139,9 +135,7 @@ By the induction hypothesis, it follows that $x-1 = y-1$, and therefore $x=y$.  
 \[ 
 \binom{r}{r} + \binom{r+1}{r} + \cdots + \binom{n}{r} = \binom{n+1}{r+1}.
 \]
-\item In lecture we gave an inductive proof of the Hockey-Stick identity.  Give a combinatorial proof.  It's fine to give a combinatorial proof of the identity from part (a) of this problem, rather than of the Hockey-Stick result directly.
-
-It will be helpful to look at Exercise 3.6.4 and its Hint in the back of the LVP book.
+\item In lecture we gave a combinatorial proof of the Hockey-Stick identity.  Give another.  It's fine to give a combinatorial proof of the identity from part (a) of this problem, rather than of the Hockey-Stick result directly. It will be helpful to look at Exercise 3.6.4 and its Hint in the back of the LVP book.
 \end{enumerate}
 
 
