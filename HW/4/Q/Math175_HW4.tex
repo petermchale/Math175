@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{graphics}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{fullpage}
+\newcommand{\F}{{\mathbb F}}
+
+\begin{document}
+\begin{center}
+{\Large \bf Math 175: Combinatorics} \\
+{\Large \bf Homework 4}\\
+{\Large Posted Friday Feb 9th}\\
+{\Large Due in Discussion Thursday, February 15th}
+\end{center}
+
+
+After the last homework was posted, we continued our discussion of Fibonacci numbers, first counting the number of compositions of $n$ into $1$'s and $2$'s.  We then proved more identities in Pascal's triangle.  We started by showing that $\sum_{k=0}^n \binom{n}{k}^2 = \binom{2n}{n}$.  We first gave a combinatorial proof and then showed how it followed from a more general statement, Vandermonde's Identity.  
+
+We then stated and proved the Binomial Theorem in two different ways, first by induction using the identity $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ and then by using a combinatorial argument.  We showed how substituting values of $x$ and $y$ gives new proofs of identities we have already seen, and also leads to new identities.  In particular, we showed how setting $x = i$ and $y = 1$ gave a formula for $\sum_{k=0}^n (-1)^k \binom{2n}{2k}$.  In order to understand this argument, we first reviewed some basic facts about complex numbers.  We also showed how the Binomial Theorem gave another proof of Vandermonde's Identity.
+
+We then talked about anagrams and multinomial coefficients, and stated the Multinomial Theorem and the analogue of the identity $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$.  Finally, we started to talk more about counting and went over an example involving counting labeled vs. unlabeled teams.
+
+The main topics that we covered are the subjects of Section 3.1 of LVP and Sections 2.2 and 2.3 of HHM.  I mentioned Pascal's Pyramid in lecture: there is a nice picture of the first few levels in Figure 2.1 on page 146 of HHM.
+
+\newpage
+
+\centerline{ \bf \Large Problems}
+
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+\item How many subsets of $\{1,2,\ldots, n\}$ contain no two consecutive integers?
+
+\item How many subsets of $\{1,2,\ldots, n\}$ contain no two consecutive integers if $1$ and $n$ also count as consecutive?
+
+\item How many subsets of $\{1,2,\ldots, n\}$ of size $k$ contain no two consecutive integers?
+
+{\bf Hint}: For this part, if you take out $k$ integers from this set, the remaining numbers are grouped into blocks in a natural way.  How many blocks are there and what do we know about their sizes?
+
+\item Write down the identity you get from taking a sum over the result in part (c) and comparing it to the result from part (a).
+
+\end{enumerate}
+
+\item {\bf Exercise 4.3.16 of LVP} 
+\begin{enumerate}
+\item Prove that every positive integer can be written as a sum of different Fibonacci numbers.
+
+\item Prove even more: every positive integer can be written as the sum of different Fibonacci numbers, so that no two consecutive Fibonacci numbers are used.
+
+\item Show by an example that the representation in (a) is not unique, but also prove that the more restrictive representation in (b) is.
+\end{enumerate}
+
+\item In lecture we used the Binomial Theorem to prove that 
+\[
+\sum_{k=0}^n \binom{2n}{2k} (-1)^k = 2^n \left(\cos\left(\frac{\pi n}{2}\right)\right).
+\]
+
+\begin{enumerate}
+
+\item Evaluate
+\[ 
+\sum_{k=0}^n \binom{4n}{4k}.
+\]
+
+\item {\bf Not Required/Extra Credit}: Use the Binomial Theorem to evaluate 
+\[ 
+\sum_{k=0}^n \binom{3n}{3k}.
+\]
+
+{\bf Hint}: In lecture we proved a similar identity by letting $x=1$ and $y= \sqrt{-1}$ in the Binomial Theorem.  What happens when you try something similar using each of the three complex solutions to $z^3 = 1$?
+
+\end{enumerate}
+
+
+
+\item In lecture we defined $\binom{n}{k_1,k_2, \ldots, k_t}$ when $k_1+\cdots + k_t = n$ and each $k_i$ is an integer.  Recall that if at least one of these $k_i$ is less than zero, then this multinomial coefficient is zero.  This is often useful.  For example it makes the identity $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ true even when $k=0$.
+
+\begin{enumerate}
+\item Suppose $n \ge 1, k_1+k_2+\cdots +k_t = n$ and each $k_i \ge 0$.  Prove the identity
+\begin{eqnarray*}
+\binom{n}{k_1,k_2, \ldots, k_t}  & = & \binom{n-1}{k_1-1,k_2, \ldots, k_t} \\
+&  & +  \binom{n-1}{k_1,k_2-1, \ldots, k_t} \\
+&  & + \cdots +  \binom{n-1}{k_1,k_2, \ldots, k_t-1}.
+\end{eqnarray*}
+Can you think of a combinatorial proof?
+
+\item Use part (a) to prove the multinomial theorem by induction.  That is, prove that for any nonnegative integer $n$,
+\[
+(x_1 + \cdots + x_t)^n = \sum_{k_1+\cdots + k_t = n \atop \text{and each } k_i \ge 0} \binom{n}{k_1,k_2, \ldots, k_t} x_1^{k_1} x_2^{k_2}\cdots x_t^{k_t}.
+\]
+
+\end{enumerate}
+
+\item Prove the following identity: If $m$ and $n$ are nonnegative integers and $a+b+c = m+n$, then
+\[
+\sum_{\alpha+\beta+\gamma = m} \binom{m}{\alpha, \beta, \gamma} \binom{n}{a-\alpha, b - \beta, c- \gamma} = \binom{m+n}{a,b,c}.
+\]
+Recall that a multinomial coefficient $\binom{n}{a,b,c} = 0$ if any of $a,b,c$ are negative.
+
+
+
+
+\item You are going to play paintball with $5$ of your friends.  When you are getting ready to split up into teams, $4$ local ninjas decide to play with you.  As everyone knows, ninjas are excellent at paintball.  You do not want to play against a team with four ninjas on it.  
+\begin{enumerate}
+\item How many ways are there to split up the $10$ of you, (you, your $5$ friends, and the $4$ ninjas)  into two teams of $5$, so that your team has at least one ninja?  
+\item How many ways are there so that both teams have at least one ninja?
+\end{enumerate}
+
+%\item 
+%\begin{enumerate}
+%\item How many ways are there to line up $4$ boys and $8$ girls so that no two boys are next to each other?  
+
+%{\bf Note}: Each child is a unique, so $B_1 B_2 B_3 B_4 G_1 G_2 \cdots G_8$ is a different lineup than $B_2 B_1 B_3 B_4 G_1 G_2 \cdots G_8$, (although neither one counts for this question.)
+
+%\item How many ways are there to seat these $4$ boys and $8$ girls at a circular table (with labeled chairs) so that no two boys are next to each other?
+%\end{enumerate}
+
+%\item How many pairs of subsets $A, B$ of $\{1,2,\ldots, n\}$ are there such that $A$ is contained in $B$?
+
+\end{enumerate}
+
+
+
+\end{document}
