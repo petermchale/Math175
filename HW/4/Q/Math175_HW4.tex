@@ -41,19 +41,23 @@ The main topics that we covered are the subjects of Section 3.1 of LVP and Secti
 
 \item 
 \begin{enumerate}
-\item How many subsets of $\{1,2,\ldots, n\}$ contain no two consecutive integers?
+\item How many subsets of $\{1,2,\ldots, n\}$ contain no two consecutive integers? 
 
-\item How many subsets of $\{1,2,\ldots, n\}$ contain no two consecutive integers if $1$ and $n$ also count as consecutive?
+{\bf Hint}: one approach is to derive a recurrence relation on $n$ in much the same way as we tackled the staircase problem in lecture.
+
+\item How many subsets of $\{1,2,\ldots, n\}$ contain no two consecutive integers if $1$ and $n$ also count as consecutive? 
+
+{\bf Hint}: use the subtraction principle.
 
 \item How many subsets of $\{1,2,\ldots, n\}$ of size $k$ contain no two consecutive integers?
 
-{\bf Hint}: For this part, if you take out $k$ integers from this set, the remaining numbers are grouped into blocks in a natural way.  How many blocks are there and what do we know about their sizes?
+{\bf Hint}: For this part, if you take out $k$ integers from this set, the remaining numbers are grouped into blocks in a natural way.  By considering how many blocks there are and what their sizes are, cast the problem in terms of counting compositions. 
 
 \item Write down the identity you get from taking a sum over the result in part (c) and comparing it to the result from part (a).
 
 \end{enumerate}
 
-\item {\bf Exercise 4.3.16 of LVP} 
+\item {\bf Exercise 4.3.16 of LVP. [Review the hints given on p4-6 of L8.] } 
 \begin{enumerate}
 \item Prove that every positive integer can be written as a sum of different Fibonacci numbers.
 
@@ -103,20 +107,30 @@ Can you think of a combinatorial proof?
 
 \end{enumerate}
 
-\item Prove the following identity: If $m$ and $n$ are nonnegative integers and $a+b+c = m+n$, then
+\item Prove the following generalization of the Vandermonde Identity: If $m$ and $n$ are nonnegative integers and $a+b+c = m+n$, then
 \[
 \sum_{\alpha+\beta+\gamma = m} \binom{m}{\alpha, \beta, \gamma} \binom{n}{a-\alpha, b - \beta, c- \gamma} = \binom{m+n}{a,b,c}.
 \]
-Recall that a multinomial coefficient $\binom{n}{a,b,c} = 0$ if any of $a,b,c$ are negative.
+Recall that a multinomial coefficient $\binom{n}{a,b,c} = 0$ if any of $a,b,c$ are negative. 
+
+{\bf Hint}: show the LHS and RHS count the same things in two different ways, much as we proved that $\sum_k \binom{n}{k}^2 = \binom{2n}{n}$ in L9.
 
 
 
 
 \item You are going to play paintball with $5$ of your friends.  When you are getting ready to split up into teams, $4$ local ninjas decide to play with you.  As everyone knows, ninjas are excellent at paintball.  You do not want to play against a team with four ninjas on it.  
 \begin{enumerate}
-\item How many ways are there to split up the $10$ of you, (you, your $5$ friends, and the $4$ ninjas)  into two teams of $5$, so that your team has at least one ninja?  
+\item How many ways are there to split up the $10$ of you, (you, your $5$ friends, and the $4$ ninjas)  into two teams of $5$, so that your team has at least one ninja? 
+
+{\bf Hint}: use the subtraction principle!
+
 \item How many ways are there so that both teams have at least one ninja?
+
+{\bf Hint}: use the subtraction principle!
+
 \end{enumerate}
+
+
 
 %\item 
 %\begin{enumerate}
